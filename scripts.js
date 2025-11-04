@@ -466,7 +466,7 @@ function getLink(liveId, anchorId, liveStatus, type) {
     .then((response) => response.json())
     .then((data) => {
       var link = data.data.pullStreamUrl.replaceAll("rtmp", "webrtc");
-      location.href = `/video.html?link=${link}`;
+      location.href = `/testhtml/video.html?link=${link}`;
     })
     .catch((error) => {
       alert(error);
@@ -509,7 +509,7 @@ function getLinkqq(liveId, anchorId, liveStatus, type) {
       console.log("url", url);
 
       var link = url.replaceAll("rtmp", "webrtc");
-      location.href = `/video.html?link=${link}`;
+      location.href = `/testhtml/video.html?link=${link}`;
     })
     .catch((error) => {
       alert(error);
@@ -542,7 +542,7 @@ function getLinkyy(liveId, anchorId, liveStatus, type) {
     .then((data) => {
       let link = decryptString(data.unlDefPa);
       console.log(link);
-      location.href = `/video.html?link=${link}`;
+      location.href = `/testhtml/video.html?link=${link}`;
     })
     .catch((error) => {
       alert(error);
@@ -575,7 +575,7 @@ function getLink789(liveId, anchorId, liveStatus, type) {
     .then((data) => {
       let link = decryptString(data.unlDefPa);
       console.log(link);
-      location.href = `/video.html?link=${link}`;
+      location.href = `/testhtml/video.html?link=${link}`;
     })
     .catch((error) => {
       alert(error);
