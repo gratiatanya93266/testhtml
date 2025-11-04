@@ -309,41 +309,10 @@ function getlist789() {
     });
 }
 function get_token(key) {
-  const url = "https://be-mmlive.vercel.app/users";
 
-  fetch(url, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    allow: "*",
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const item = data.find((item) => item.key === key);
-      localStorage.setItem(key, JSON.stringify(item.token));
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
 }
 function set_token(key, token) {
-  const url = "https://be-mmlive.vercel.app/users";
-
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ key: key, token: token }), // Chuyển dữ liệu thành chuỗi JSON
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      localStorage.setItem(key, JSON.stringify(data.token));
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  localStorage.setItem(key, JSON.stringify(data.token));
 }
 function login() {
   const url =
