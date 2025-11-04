@@ -312,7 +312,7 @@ function get_token(key) {
 
 }
 function set_token(key, token) {
-  localStorage.setItem(key, JSON.stringify(data.token));
+  localStorage.setItem(key, JSON.stringify(token));
 }
 function login() {
   const url =
