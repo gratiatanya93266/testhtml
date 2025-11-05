@@ -483,7 +483,7 @@ function addClickEventAfterDelay() {
         var liveStatus = this.getAttribute("liveStatus");
         var type = this.getAttribute("type");
 
-        getLink789(liveId, anchorId, liveStatus, type);
+        getLinkHot51(liveId, anchorId, liveStatus, type);
       });
     }
   }, 2000); // 2000ms = 2 giây
@@ -633,7 +633,7 @@ function getLink789(liveId, anchorId, liveStatus, type) {
       alert(error);
     });
 }
-function getHot51(liveId, anchorId, liveStatus, type) {
+function getLinkHot51(liveId, anchorId, liveStatus, type) {
   const url =
     "https://api.fnccdn.com/501/api/live-service/v4/public/live/room-info";
 
