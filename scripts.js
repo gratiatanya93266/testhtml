@@ -235,8 +235,8 @@ function getlistqq() {
     });
 }
 function getlistyy() {
-  const url =
-    "https://api.fnccdn.com/511/api/live-service/h5/v5/public/live/lives?pageNum=1&pageSize=200&labelId=1";
+  const url = "https://api.fnccdn.com/511/api/plr/zbliv/h5/v5/public/live/lives?pageNum=1&pageSize=200&labelId=1";
+    //"https://api.fnccdn.com/511/api/live-service/h5/v5/public/live/lives?pageNum=1&pageSize=200&labelId=1";
 
   fetch(url, {
     method: "POST",
