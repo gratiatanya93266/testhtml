@@ -273,7 +273,7 @@ function getlistyy() {
 }
 function getlist789() {
   const url =
-    "https://api.fnccdn.com/560/api/live-service/h5/v5/public/live/lives?pageNum=1&pageSize=100&labelId=1";
+    "https://api.fnccdn.com/560/api/plr/zbliv/h5/v5/public/live/lives?pageNum=1&pageSize=200&labelId=1";
 
   fetch(url, {
     method: "POST",
@@ -311,7 +311,7 @@ function getlist789() {
 
 function getlisthot51() {
   const url =
-    "https://api.fnccdn.com/501/api/live-service/h5/v5/public/live/lives?pageNum=1&pageSize=100&labelId=1";
+    "https://api.fnccdn.com/501/api/plr/zbliv/h5/v5/public/live/lives?pageNum=1&pageSize=200&labelId=1";
 
   fetch(url, {
     method: "POST",
