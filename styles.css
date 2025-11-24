@@ -25,3 +25,7 @@ button {
   grid-template-columns: 1fr 1fr;
   padding-bottom: 40px;
 }
+
+div[type="2"] img {
+    border: 2px solid red;
+}
