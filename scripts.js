@@ -568,8 +568,7 @@ function getLinkqq(liveId, anchorId, liveStatus, type) {
     });
 }
 function getLinkyy(liveId, anchorId, liveStatus, type) {
-  const url =
-    "https://api.fnccdn.com/511/api/live-service/v4/public/live/room-info";
+  const url = "https://api.fnccdn.com/511/api/plr/zbliv/h5/v3/public/live/room-info";
 
   fetch(url, {
     method: "POST",
@@ -601,8 +600,7 @@ function getLinkyy(liveId, anchorId, liveStatus, type) {
     });
 }
 function getLink789(liveId, anchorId, liveStatus, type) {
-  const url =
-    "https://api.fnccdn.com/560/api/live-service/v4/public/live/room-info";
+  const url = "https://api.fnccdn.com/560/api/plr/zbliv/h5/v3/public/live/room-info";
 
   fetch(url, {
     method: "POST",
@@ -634,8 +632,7 @@ function getLink789(liveId, anchorId, liveStatus, type) {
     });
 }
 function getLinkHot51(liveId, anchorId, liveStatus, type) {
-  const url =
-    "https://api.fnccdn.com/501/api/live-service/v4/public/live/room-info";
+  const url = "https://api.fnccdn.com/501/api/plr/zbliv/h5/v3/public/live/room-info";
 
   fetch(url, {
     method: "POST",
