@@ -490,7 +490,8 @@ function addClickEventAfterDelay() {
   }, 2000); // 2000ms = 2 giây
 }
 function getLink(liveId, anchorId, liveStatus, type) {
-  const url = "https://gateway.mmlive.online/live-client/live/inter/room/220";
+  const url = "https://gateway.mm-obtain.com/live-client/live/inter/room/220";
+  
   var token = localStorage.getItem("mmlive");
   token = token.replace(/"/g, "");
 
