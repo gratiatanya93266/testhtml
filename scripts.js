@@ -664,20 +664,7 @@ function getLinkHot51(liveId, anchorId, liveStatus, type) {
       alert(error);
     });
 }
-function get_token() {
-  const url = "https://be-mmlive.vercel.app/users";
-  fetch(url, {
-    method: "GET",
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      data?.map((item) => {
-        localStorage.setItem(item.key, JSON.stringify(item.token));
-      });
-    });
-}
 document.addEventListener("DOMContentLoaded", function () {
-  get_token();
   getlist();
   getlistqq();
   getlistyy();
