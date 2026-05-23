@@ -197,7 +197,7 @@ function getlist() {
 }
 function getlistqq() {
   const url =
-    "https://gateway.qqlive.online/live-client/live/new/4231/1529/list";
+    "https://gateway.qq-obtain.com/live-client/live/new/4231/1529/list";
 
   fetch(url, {
     method: "POST",
@@ -385,7 +385,7 @@ function login() {
 }
 function loginqq() {
   const url =
-    "https://gateway.qqlive.online/center-client/sys/auth/new/phone/login";
+    "https://gateway.qq-obtain.com/center-client/sys/auth/new/phone/login";
 
   fetch(url, {
     method: "POST",
@@ -527,7 +527,7 @@ function getLink(liveId, anchorId, liveStatus, type) {
     });
 }
 function getLinkqq(liveId, anchorId, liveStatus, type) {
-  const url = "https://gateway.qqlive.online/live-client/live/inter/room/220";
+  const url = "https://gateway.qq-obtain.com/live-client/live/inter/room/220";
   var token = localStorage.getItem("qqlive");
   token = token.replace(/"/g, "");
 
