@@ -168,7 +168,7 @@ function decryptString(encryptedString) {
 ////////////
 function getlist() {
   const url =
-    "https://gateway.mmlive.online/live-client/live/new/4231/1529/list";
+    "https://gateway.mm-obtain.com/live-client/live/new/4231/1529/list";
 
   fetch(url, {
     method: "POST",
