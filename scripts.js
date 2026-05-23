@@ -355,7 +355,7 @@ function set_token(key, token) {
 }
 function login() {
   const url =
-    "https://gateway.mmlive.online/center-client/sys/auth/new/phone/login";
+    "https://gateway.mm-obtain.com/center-client/mm/sys/auth/app/2026/new/phone/login";
 
   fetch(url, {
     method: "POST",
@@ -363,6 +363,7 @@ function login() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      appId: "MMLive",
       os: 0,
       sign: "21c6066ff81e18305b5186108248e312",
       timestamp: 1722330828163,
@@ -384,7 +385,7 @@ function login() {
 }
 function loginqq() {
   const url =
-    "https://gateway.qqlive.online/center-client/sys/auth/new/phone/login";
+    "https://gateway.mm-obtain.com/center-client/qq/sys/auth/app/2026/new/phone/login";
 
   fetch(url, {
     method: "POST",
