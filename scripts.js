@@ -526,49 +526,105 @@ function getLink(liveId, anchorId, liveStatus, type) {
       alert(error);
     });
 }
-function getLinkqq(liveId, anchorId, liveStatus, type) {
-  const url = "https://gateway.qq-obtain.com/live-client/live/inter/room/220";
-  var token = localStorage.getItem("qqlive");
-  token = token.replace(/"/g, "");
+// function getLinkqq(liveId, anchorId, liveStatus, type) {
+//   const url = "https://gateway.qq-obtain.com/live-client/live/inter/room/220";
+//   var token = localStorage.getItem("qqlive");
+//   token = token.replace(/"/g, "");
 
-  fetch(url, {
+//   fetch(url, {
+//     method: "POST",
+//     headers: {
+//       Authorization: `HSBox ${token}`,
+//       "x-timestamp": 1723520610607,
+//       "x-udid": "05991a20be781bc01fd54e34a16021ed",
+//       "x-sign": "61efc8af4c507a4859784791fa5a697a",
+//       Referer: "https://qqlive.online/",
+//       "User-Agent":
+//         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+//       "Content-Type": "application/json",
+//       "p-ae": "n",
+//     },
+//     body: JSON.stringify(
+//       encryptLast({
+//         anchorId: Number(anchorId),
+//         liveId: Number(liveId),
+//         uid: 2026328074,
+//         adJumpUrl: "",
+//         liveStatus: Number(liveStatus),
+//         isRoomPreview: 0,
+//         type: type,
+//       })
+//     ),
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const decryptedResult = decryptLast(data);
+//       const url = decryptL(decryptedResult.data.pullStreamUrl);
+//       console.log("url", url);
+
+//       var link = url.replaceAll("rtmp", "webrtc");
+//       location.href = `/testhtml/video.html?link=${link}`;
+//     })
+//     .catch((error) => {
+//       alert(error);
+//     });
+// }
+
+function getLinkqq(liveId, anchorId, liveStatus, type) {
+  var token = localStorage.getItem("qqlive").replace(/"/g, "");
+  // Lấy key/iv từ localStorage (lưu sau login)
+  const keyqq = JSON.parse(localStorage.getItem("keyqq") || "{}");
+  const UDID = keyqq.udid || "05991a20be781bc01fd54e34a16021ed";
+  const TS = Date.now().toString();
+  const sign = CryptoJS.MD5(UDID + "jgyh,kasd" + TS).toString().toUpperCase();
+  // *** Body phải gồm cả base params + room params ***
+  const body = encryptLast({
+    // Base params (bắt buộc)
+    appId: "QQlive", udid: UDID, timestamp: +TS, token: token,
+    sign: sign, channel: "", versionTag: "Y", language: "YN",
+    "X-AppVersion": "2.6.0", "P-G": "N", os: "1",
+    paySign: CryptoJS.MD5(UDID.substring(0,6) + "8qiezi" + TS).toString().toUpperCase(),
+    // Room params
+    anchorId: Number(anchorId), liveId: Number(liveId),
+    uid: Number(keyqq.uid || 2026328074), adJumpUrl: "",
+    liveStatus: Number(liveStatus), isRoomPreview: 0, type: type,
+  });
+  fetch("https://gateway.qq-obtain.com/live-client/live/inter/room/220", {
     method: "POST",
     headers: {
-      Authorization: `HSBox ${token}`,
-      "x-timestamp": 1723520610607,
-      "x-udid": "05991a20be781bc01fd54e34a16021ed",
-      "x-sign": "61efc8af4c507a4859784791fa5a697a",
-      Referer: "https://qqlive.online/",
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      // *** Headers đầy đủ, đúng case ***
       "Content-Type": "application/json",
-      "p-ae": "n",
+      "appId": "QQlive",
+      "X-UDID": UDID,
+      "X-Timestamp": TS,
+      "X-Sign": sign,
+      "X-AppVersion": "2.6.0",
+      "versionTag": "Y",
+      "N-L": "Y",
+      "X-Language": "YN",
+      "P-G": "N",
+      "P-AE": "1",
+      "NEW-PK": "1",
+      "TEST-FLAG": "0",
+      "os": "1",
+      "Authorization": "HSBox " + token,
     },
-    body: JSON.stringify(
-      encryptLast({
-        anchorId: Number(anchorId),
-        liveId: Number(liveId),
-        uid: 2026328074,
-        adJumpUrl: "",
-        liveStatus: Number(liveStatus),
-        isRoomPreview: 0,
-        type: type,
-      })
-    ),
+    body: JSON.stringify(body),  // body đã là {abc, qwe}
   })
-    .then((response) => response.json())
-    .then((data) => {
+    .then(r => r.json())
+    .then(data => {
       const decryptedResult = decryptLast(data);
-      const url = decryptL(decryptedResult.data.pullStreamUrl);
+      // data có thể là {code, msg, data: {...}} 
+      // hoặc trực tiếp {pullStreamUrl, ...}
+      const roomData = decryptedResult.data || decryptedResult;
+      const url = decryptL(roomData.pullStreamUrl);
       console.log("url", url);
-
       var link = url.replaceAll("rtmp", "webrtc");
       location.href = `/testhtml/video.html?link=${link}`;
     })
-    .catch((error) => {
-      alert(error);
-    });
+    .catch(error => alert(error));
 }
+
 function getLinkyy(liveId, anchorId, liveStatus, type) {
   const url = "https://api.fnccdn.com/511/api/plr/zbliv/h5/v3/public/live/room-info";
 
