@@ -385,7 +385,7 @@ function login() {
 }
 function loginqq() {
   const url =
-    "https://gateway.mm-obtain.com/center-client/qq/sys/auth/app/2026/new/phone/login";
+    "https://gateway.qqlive.online/center-client/sys/auth/new/phone/login";
 
   fetch(url, {
     method: "POST",
