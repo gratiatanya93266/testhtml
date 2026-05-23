@@ -572,19 +572,16 @@ function getLink(liveId, anchorId, liveStatus, type) {
 
 function getLinkqq(liveId, anchorId, liveStatus, type) {
   var token = localStorage.getItem("qqlive").replace(/"/g, "");
-  // Lấy key/iv từ localStorage (lưu sau login)
   const keyqq = JSON.parse(localStorage.getItem("keyqq") || "{}");
   const UDID = keyqq.udid || "05991a20be781bc01fd54e34a16021ed";
   const TS = Date.now().toString();
   const sign = CryptoJS.MD5(UDID + "jgyh,kasd" + TS).toString().toUpperCase();
-  // *** Body phải gồm cả base params + room params ***
+  const paySign = CryptoJS.MD5(UDID.substring(0,6) + "8qiezi" + TS).toString().toUpperCase();
   const body = encryptLast({
-    // Base params (bắt buộc)
     appId: "QQlive", udid: UDID, timestamp: +TS, token: token,
     sign: sign, channel: "", versionTag: "Y", language: "YN",
     "X-AppVersion": "2.6.0", "P-G": "N", os: "1",
-    paySign: CryptoJS.MD5(UDID.substring(0,6) + "8qiezi" + TS).toString().toUpperCase(),
-    // Room params
+    paySign: paySign,
     anchorId: Number(anchorId), liveId: Number(liveId),
     uid: Number(keyqq.uid || 2026328074), adJumpUrl: "",
     liveStatus: Number(liveStatus), isRoomPreview: 0, type: type,
@@ -592,7 +589,6 @@ function getLinkqq(liveId, anchorId, liveStatus, type) {
   fetch("https://gateway.qq-obtain.com/live-client/live/inter/room/220", {
     method: "POST",
     headers: {
-      // *** Headers đầy đủ, đúng case ***
       "Content-Type": "application/json",
       "appId": "QQlive",
       "X-UDID": UDID,
@@ -609,13 +605,11 @@ function getLinkqq(liveId, anchorId, liveStatus, type) {
       "os": "1",
       "Authorization": "HSBox " + token,
     },
-    body: JSON.stringify(body),  // body đã là {abc, qwe}
+    body: JSON.stringify(body),
   })
     .then(r => r.json())
     .then(data => {
       const decryptedResult = decryptLast(data);
-      // data có thể là {code, msg, data: {...}} 
-      // hoặc trực tiếp {pullStreamUrl, ...}
       const roomData = decryptedResult.data || decryptedResult;
       const url = decryptL(roomData.pullStreamUrl);
       console.log("url", url);
