@@ -414,7 +414,7 @@ function loginqq() {
     .then((response) => response.json())
     .then((data) => {
       const decryptedResult = decryptLast(data);
-      localStorage.setItem('qqlive_token', JSON.stringify(decryptedResult.data?.token || decryptedResult.token;));
+      localStorage.setItem('qqlive_token', JSON.stringify(decryptedResult.data?.token || decryptedResult.token));
       localStorage.setItem('qqlive_key', JSON.stringify({
         randomKey: decryptedResult.data?.randomKey || decryptedResult.randomKey,
         randomVector: decryptedResult.data?.randomVector || decryptedResult.randomVector,
