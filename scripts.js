@@ -535,12 +535,6 @@ function getLinkqq(liveId, anchorId, liveStatus, type) {
   let keys = JSON.parse(localStorage.getItem('qqlive_key') || '{}');
   let uid = localStorage.getItem('qqlive_uid') || '3024272496';
 
-  if (!token) {
-    token = await loginqq();
-    keys = JSON.parse(localStorage.getItem('qqlive_key') || '{}');
-    uid = localStorage.getItem('qqlive_uid') || '3024272496';
-  }
-
   const ts = Date.now().toString();
   const sign = CryptoJS.MD5(QQ_UDID + 'jgyh,kasd' + ts).toString().toUpperCase();
   const paySign = CryptoJS.MD5(QQ_UDID.substring(0, 6) + '8qiezi' + ts).toString().toUpperCase();
