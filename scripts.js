@@ -203,15 +203,19 @@ function getlistqq() {
     method: "POST",
     targetUrl: "https://qqlive.online/",
     headers: {
-      "x-timestamp": 1780077628981  ,
-      "x-udid": "bd60d97b3c6a61ed2066343985a9c8c8",
-      "x-sign": "3F88D94297996BC008A38C3D3766140A'",
       "Content-Type": "application/json",
-      Referer: "https://qqlive.online/",
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-      appid: "QQlive",
-      "p-ae": "n",
+      "X-UDID": "bd60d97b3c6a61ed2066343985a9c8c8",
+      "X-Timestamp'": 1780077628981,
+      "X-Sign": "3F88D94297996BC008A38C3D3766140A",
+      appId: "QQlive", 
+      os: "1", 
+      versionTag: "Y", 
+      "n-l": "Y",
+      "X-Language": "YN", 
+      "X-AppVersion": "2.6.0", "P-G": "G", "P-AE": "1",
+      "NEW-PK": "1", 
+      "TEST-FLAG": "0", 
+      "User-Agent": "okhttp/4.9.3",
     },
     body: JSON.stringify({
       abc: "1780077628981EeUiWCwG4k61Etvei7wwAH4sccHb6qWfUySFUeUAJtY=",
@@ -391,20 +395,23 @@ function loginqq() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-timestamp": 1780077628981,
-      "x-udid": "bd60d97b3c6a61ed2066343985a9c8c8'",
-      "x-sign": "3F88D94297996BC008A38C3D3766140A",
-      "Content-Type": "application/json",
-      Referer: "https://qqlive.online/",
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-      appid: "QQlive",
-      "p-ae": "n",
+      "X-UDID": "bd60d97b3c6a61ed2066343985a9c8c8",
+      "X-Timestamp'": 1780077628981,
+      "X-Sign": "3F88D94297996BC008A38C3D3766140A",
+      appId: "QQlive", 
+      os: "1", 
+      versionTag: "Y", 
+      "n-l": "Y",
+      "X-Language": "YN", 
+      "X-AppVersion": "2.6.0", "P-G": "G", "P-AE": "1",
+      "NEW-PK": "1", 
+      "TEST-FLAG": "0", 
+      "User-Agent": "okhttp/4.9.3",
     },
     body: JSON.stringify({
       abc: "1780077628981EeUiWCwG4k61Etvei7wwAH4sccHb6qWfUySFUeUAJtY=",
       qwe: "3stteyeoSfIUH6pmmbaEr2KW2lDTAwy9JNbtnUs7fHbmBmG0yFcJxKpbTXDxOzx+7+c9haf5+sBA3YnvVgmuL0fPkGk5PcqyNv0Fw15I0/I0+DZ9r8fUNwGs+mdy1+DZBCGLy+BXwF+Ua74rwjILHYX457PF4t3l12zGHmabm30XtbZnqsB83sg7eup2critE7apTsMqObLsPJpc56zPvX6Jt4oCMRx61HyfLcpm44qcDL66kKGM/Jr373xN+dRE/j/xBbiFWsBpPmZU4orwTsqEhC4H6Wel7UtDWSCUXGD6pWXGv4ORCxr6yka7Ln9xnJRweLKXEHiP6W6HrPvICDP9cCHPskSDZgK3FfiOXw6dX7la5BKiPi7QvWlvKqNRJEKxufFdRWGKnF3px3Za16uptAWU8yRcOt2cw8KWrI9eUlPutIdwteVUDaasS7U6tRs+u80VFd4hUqHDr9LtGg8V99e58eT7TfEPKzoUrJS70WvxOxl5qU/cjTrZGYecJcy0PVsSmblUDl4K4j0geF9YkdoJkGbc4nxS+9LOFYsp/90n26hAKKV8hQXj7GmP7Z05169xANyjzviR/bSn9A==",
-    }), // Chuyển dữ liệu thành chuỗi JSON
+    }),
   })
     .then((response) => response.json())
     .then((data) => {
