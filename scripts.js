@@ -198,30 +198,23 @@ function getlist() {
 function getlistqq() {
   const url =
     "https://gateway.qq-obtain.com/live-client/live/new/4231/1529/list";
+  const ts = Date.now().toString();
+  const udid = 'bd60d97b3c6a61ed2066343985a9c8c8';
+  const sign = CryptoJS.MD5(udid + 'jgyh,kasd' + ts).toString().toUpperCase();
+  const body = encryptLast({ uid: 0, type: 1 });
 
   fetch(url, {
     method: "POST",
-    targetUrl: "https://qqlive.online/",
     headers: {
-      "Content-Type": "application/json",
-      "X-UDID": "bd60d97b3c6a61ed2066343985a9c8c8",
-      "X-Timestamp'": 1780077628981,
-      "X-Sign": "3F88D94297996BC008A38C3D3766140A",
-      appId: "QQlive", 
-      os: "1", 
-      versionTag: "Y", 
-      "n-l": "Y",
-      "X-Language": "YN", 
-      "X-AppVersion": "2.6.0", "P-G": "G", "P-AE": "1",
-      "NEW-PK": "1", 
-      "TEST-FLAG": "0", 
-      "User-Agent": "okhttp/4.9.3",
+       'Content-Type': 'application/json',
+        'x-timestamp': ts,
+        'x-udid': udid,
+        'x-sign': sign,
+        appid: 'QQlive',
+        'p-ae': 'n',
     },
-    body: JSON.stringify({
-      abc: "1780077628981EeUiWCwG4k61Etvei7wwAH4sccHb6qWfUySFUeUAJtY=",
-      qwe: "3stteyeoSfIUH6pmmbaEr2KW2lDTAwy9JNbtnUs7fHbmBmG0yFcJxKpbTXDxOzx+7+c9haf5+sBA3YnvVgmuL0fPkGk5PcqyNv0Fw15I0/I0+DZ9r8fUNwGs+mdy1+DZBCGLy+BXwF+Ua74rwjILHYX457PF4t3l12zGHmabm30XtbZnqsB83sg7eup2critE7apTsMqObLsPJpc56zPvX6Jt4oCMRx61HyfLcpm44qcDL66kKGM/Jr373xN+dRE/j/xBbiFWsBpPmZU4orwTsqEhC4H6Wel7UtDWSCUXGD6pWXGv4ORCxr6yka7Ln9xnJRweLKXEHiP6W6HrPvICDP9cCHPskSDZgK3FfiOXw6dX7la5BKiPi7QvWlvKqNRJEKxufFdRWGKnF3px3Za16uptAWU8yRcOt2cw8KWrI9eUlPutIdwteVUDaasS7U6tRs+u80VFd4hUqHDr9LtGg8V99e58eT7TfEPKzoUrJS70WvxOxl5qU/cjTrZGYecJcy0PVsSmblUDl4K4j0geF9YkdoJkGbc4nxS+9LOFYsp/90n26hAKKV8hQXj7GmP7Z05169xANyjzviR/bSn9A==",
-    }),
-    referrerPolicy: "no-referrer",
+    body: JSON.stringify(body),
+    referrerPolicy: 'no-referrer',
   })
     .then((response) => response.json())
     .then((data) => {
@@ -533,98 +526,97 @@ function getLink(liveId, anchorId, liveStatus, type) {
       alert(error);
     });
 }
-// function getLinkqq(liveId, anchorId, liveStatus, type) {
-//   const url = "https://gateway.qq-obtain.com/live-client/live/inter/room/220";
-//   var token = localStorage.getItem("qqlive");
-//   token = token.replace(/"/g, "");
-
-//   fetch(url, {
-//     method: "POST",
-//     headers: {
-//       Authorization: `HSBox ${token}`,
-//       "x-timestamp": 1723520610607,
-//       "x-udid": "05991a20be781bc01fd54e34a16021ed",
-//       "x-sign": "61efc8af4c507a4859784791fa5a697a",
-//       Referer: "https://qqlive.online/",
-//       "User-Agent":
-//         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-//       "Content-Type": "application/json",
-//       "p-ae": "n",
-//     },
-//     body: JSON.stringify(
-//       encryptLast({
-//         anchorId: Number(anchorId),
-//         liveId: Number(liveId),
-//         uid: 2026328074,
-//         adJumpUrl: "",
-//         liveStatus: Number(liveStatus),
-//         isRoomPreview: 0,
-//         type: type,
-//       })
-//     ),
-//   })
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const decryptedResult = decryptLast(data);
-//       const url = decryptL(decryptedResult.data.pullStreamUrl);
-//       console.log("url", url);
-
-//       var link = url.replaceAll("rtmp", "webrtc");
-//       location.href = `/testhtml/video.html?link=${link}`;
-//     })
-//     .catch((error) => {
-//       alert(error);
-//     });
-// }
-
 function getLinkqq(liveId, anchorId, liveStatus, type) {
-  var token = localStorage.getItem("qqlive").replace(/"/g, "");
-  const keyqq = JSON.parse(localStorage.getItem("keyqq") || "{}");
-  const UDID = keyqq.udid || "05991a20be781bc01fd54e34a16021ed";
-  const TS = Date.now().toString();
-  const sign = CryptoJS.MD5(UDID + "jgyh,kasd" + TS).toString().toUpperCase();
-  const paySign = CryptoJS.MD5(UDID.substring(0,6) + "8qiezi" + TS).toString().toUpperCase();
-  const body = encryptLast({
-    appId: "QQlive", udid: UDID, timestamp: +TS, token: token,
-    sign: sign, channel: "", versionTag: "Y", language: "YN",
-    "X-AppVersion": "2.6.0", "P-G": "N", os: "1",
-    paySign: paySign,
-    anchorId: Number(anchorId), liveId: Number(liveId),
-    uid: Number(keyqq.uid || 2026328074), adJumpUrl: "",
-    liveStatus: Number(liveStatus), isRoomPreview: 0, type: type,
-  });
-  fetch("https://gateway.qq-obtain.com/live-client/live/inter/room/220", {
+  const url = "https://gateway.qq-obtain.com/live-client/live/inter/room/220";
+  var token = localStorage.getItem("qqlive");
+  token = token.replace(/"/g, "");
+
+  fetch(url, {
     method: "POST",
     headers: {
+      Authorization: `HSBox ${token}`,
+      "x-timestamp": 1780077628981,
+      "x-udid": "05991a20be781bc01fd54e34a16021ed",
+      "x-sign": "3F88D94297996BC008A38C3D3766140A",
+      Referer: "https://qqlive.online/",
+      'User-Agent': 'okhttp/4.9.3',
       "Content-Type": "application/json",
-      "appId": "QQlive",
-      "X-UDID": UDID,
-      "X-Timestamp": TS,
-      "X-Sign": sign,
-      "X-AppVersion": "2.6.0",
-      "versionTag": "Y",
-      "N-L": "Y",
-      "X-Language": "YN",
-      "P-G": "N",
-      "P-AE": "1",
-      "NEW-PK": "1",
-      "TEST-FLAG": "0",
-      "os": "1",
-      "Authorization": "HSBox " + token,
+      "p-ae": "n",
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify(
+      encryptLast({
+        anchorId: Number(anchorId),
+        liveId: Number(liveId),
+        uid: 2026328074,
+        adJumpUrl: "",
+        liveStatus: Number(liveStatus),
+        isRoomPreview: 0,
+        type: type,
+      })
+    ),
   })
-    .then(r => r.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       const decryptedResult = decryptLast(data);
-      const roomData = decryptedResult.data || decryptedResult;
-      const url = decryptL(roomData.pullStreamUrl);
+      const url = decryptL(decryptedResult.data.pullStreamUrl);
       console.log("url", url);
+
       var link = url.replaceAll("rtmp", "webrtc");
       location.href = `/testhtml/video.html?link=${link}`;
     })
-    .catch(error => alert(error));
+    .catch((error) => {
+      alert(error);
+    });
 }
+
+// function getLinkqq(liveId, anchorId, liveStatus, type) {
+//   var token = localStorage.getItem("qqlive").replace(/"/g, "");
+//   const keyqq = JSON.parse(localStorage.getItem("keyqq") || "{}");
+//   const UDID = keyqq.udid || "05991a20be781bc01fd54e34a16021ed";
+//   const TS = Date.now().toString();
+//   const sign = CryptoJS.MD5(UDID + "jgyh,kasd" + TS).toString().toUpperCase();
+//   const paySign = CryptoJS.MD5(UDID.substring(0,6) + "8qiezi" + TS).toString().toUpperCase();
+//   const body = encryptLast({
+//     appId: "QQlive", udid: UDID, timestamp: +TS, token: token,
+//     sign: sign, channel: "", versionTag: "Y", language: "YN",
+//     "X-AppVersion": "2.6.0", "P-G": "N", os: "1",
+//     paySign: paySign,
+//     anchorId: Number(anchorId), liveId: Number(liveId),
+//     uid: Number(keyqq.uid || 2026328074), adJumpUrl: "",
+//     liveStatus: Number(liveStatus), isRoomPreview: 0, type: type,
+//   });
+//   fetch("https://gateway.qq-obtain.com/live-client/live/inter/room/220", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       "appId": "QQlive",
+//       "X-UDID": UDID,
+//       "X-Timestamp": TS,
+//       "X-Sign": sign,
+//       "X-AppVersion": "2.6.0",
+//       "versionTag": "Y",
+//       "N-L": "Y",
+//       "X-Language": "YN",
+//       "P-G": "N",
+//       "P-AE": "1",
+//       "NEW-PK": "1",
+//       "TEST-FLAG": "0",
+//       "os": "1",
+//       "Authorization": "HSBox " + token,
+//     },
+//     body: JSON.stringify(body),
+//   })
+//     .then(r => r.json())
+//     .then(data => {
+//       const decryptedResult = decryptLast(data);
+//       const roomData = decryptedResult.data || decryptedResult;
+//       const url = decryptL(roomData.pullStreamUrl);
+//       console.log("url", url);
+//       var link = url.replaceAll("rtmp", "webrtc");
+//       location.href = `/testhtml/video.html?link=${link}`;
+//     })
+//     .catch(error => alert(error));
+// }
 
 function getLinkyy(liveId, anchorId, liveStatus, type) {
   const url = "https://api.fnccdn.com/511/api/plr/zbliv/h5/v3/public/live/room-info";
