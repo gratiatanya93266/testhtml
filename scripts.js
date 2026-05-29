@@ -10,6 +10,10 @@ document.getElementById("relogin").addEventListener("click", function () {
 document.getElementById("relogin_qq").addEventListener("click", function () {
   loginqq();
 });
+const QQ_UDID = 'bd60d97b3c6a61ed2066343985a9c8c8';
+const QQ_SIGN = '3F88D94297996BC008A38C3D3766140A';
+const QQ_TIMESTAMP = '1780077628981';
+
 const KEY = CryptoJS.enc.Utf8.parse("ugxxmyfrbh9cgg2s");
 const IV = CryptoJS.enc.Utf8.parse("a4cehrwwtew8pwty");
 function decrypt(str, keyStr, ivStr) {
@@ -199,8 +203,7 @@ function getlistqq() {
   const url =
     "https://gateway.qq-obtain.com/live-client/live/new/4231/1529/list";
   const ts = Date.now().toString();
-  const udid = 'bd60d97b3c6a61ed2066343985a9c8c8';
-  const sign = CryptoJS.MD5(udid + 'jgyh,kasd' + ts).toString().toUpperCase();
+  const sign = CryptoJS.MD5(QQ_UDID + 'jgyh,kasd' + ts).toString().toUpperCase();
   const body = encryptLast({ uid: 0, type: 1 });
 
   fetch(url, {
@@ -208,7 +211,7 @@ function getlistqq() {
     headers: {
        'Content-Type': 'application/json',
         'x-timestamp': ts,
-        'x-udid': udid,
+        'x-udid': QQ_UDID,
         'x-sign': sign,
         appid: 'QQlive',
         'p-ae': 'n',
@@ -387,36 +390,35 @@ function loginqq() {
   fetch(url, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
-      "X-UDID": "bd60d97b3c6a61ed2066343985a9c8c8",
-      "X-Timestamp'": 1780077628981,
-      "X-Sign": "3F88D94297996BC008A38C3D3766140A",
-      appId: "QQlive", 
-      os: "1", 
-      versionTag: "Y", 
-      "n-l": "Y",
-      "X-Language": "YN", 
-      "X-AppVersion": "2.6.0", "P-G": "G", "P-AE": "1",
-      "NEW-PK": "1", 
-      "TEST-FLAG": "0", 
-      "User-Agent": "okhttp/4.9.3",
+      'Content-Type': 'application/json',
+      'X-UDID': QQ_UDID,
+      'X-Timestamp': QQ_TIMESTAMP,
+      'X-Sign': QQ_SIGN,
+      appId: 'QQlive',
+      os: '1',
+      versionTag: 'Y',
+      'N-L': 'Y',
+      'X-Language': 'YN',
+      'X-AppVersion': '2.6.0',
+      'P-G': 'G',
+      'P-AE': '1',
+      'NEW-PK': '1',
+      'TEST-FLAG': '0',
+      'User-Agent': 'okhttp/4.9.3',
     },
     body: JSON.stringify({
-      abc: "1780077628981EeUiWCwG4k61Etvei7wwAH4sccHb6qWfUySFUeUAJtY=",
-      qwe: "3stteyeoSfIUH6pmmbaEr2KW2lDTAwy9JNbtnUs7fHbmBmG0yFcJxKpbTXDxOzx+7+c9haf5+sBA3YnvVgmuL0fPkGk5PcqyNv0Fw15I0/I0+DZ9r8fUNwGs+mdy1+DZBCGLy+BXwF+Ua74rwjILHYX457PF4t3l12zGHmabm30XtbZnqsB83sg7eup2critE7apTsMqObLsPJpc56zPvX6Jt4oCMRx61HyfLcpm44qcDL66kKGM/Jr373xN+dRE/j/xBbiFWsBpPmZU4orwTsqEhC4H6Wel7UtDWSCUXGD6pWXGv4ORCxr6yka7Ln9xnJRweLKXEHiP6W6HrPvICDP9cCHPskSDZgK3FfiOXw6dX7la5BKiPi7QvWlvKqNRJEKxufFdRWGKnF3px3Za16uptAWU8yRcOt2cw8KWrI9eUlPutIdwteVUDaasS7U6tRs+u80VFd4hUqHDr9LtGg8V99e58eT7TfEPKzoUrJS70WvxOxl5qU/cjTrZGYecJcy0PVsSmblUDl4K4j0geF9YkdoJkGbc4nxS+9LOFYsp/90n26hAKKV8hQXj7GmP7Z05169xANyjzviR/bSn9A==",
+      abc: '1780077628981EeUiWCwG4k61Etvei7wwAH4sccHb6qWfUySFUeUAJtY=',
+      qwe: '3stteyeoSfIUH6pmmbaEr2KW2lDTAwy9JNbtnUs7fHbmBmG0yFcJxKpbTXDxOzx+7+c9haf5+sBA3YnvVgmuL0fPkGk5PcqyNv0Fw15I0/I0+DZ9r8fUNwGs+mdy1+DZBCGLy+BXwF+Ua74rwjILHYX457PF4t3l12zGHmabm30XtbZnqsB83sg7eup2critE7apTsMqObLsPJpc56zPvX6Jt4oCMRx61HyfLcpm44qcDL66kKGM/Jr373xN+dRE/j/xBbiFWsBpPmZU4orwTsqEhC4H6Wel7UtDWSCUXGD6pWXGv4ORCxr6yka7Ln9xnJRweLKXEHiP6W6HrPvICDP9cCHPskSDZgK3FfiOXw6dX7la5BKiPi7QvWlvKqNRJEKxufFdRWGKnF3px3Za16uptAWU8yRcOt2cw8KWrI9eUlPutIdwteVUDaasS7U6tRs+u80VFd4hUqHDr9LtGg8V99e58eT7TfEPKzoUrJS70WvxOxl5qU/cjTrZGYecJcy0PVsSmblUDl4K4j0geF9YkdoJkGbc4nxS+9LOFYsp/90n26hAKKV8hQXj7GmP7Z05169xANyjzviR/bSn9A==',
     }),
   })
     .then((response) => response.json())
     .then((data) => {
       const decryptedResult = decryptLast(data);
-      set_token("qqlive", decryptedResult.data.token);
-      localStorage.setItem(
-        "keyqq",
-        JSON.stringify({
-          randomKey: decryptedResult.data.randomKey,
-          randomVector: decryptedResult.data.randomVector,
-        })
-      );
+      localStorage.setItem('qqlive_token', JSON.stringify(decryptedResult.data?.token || decryptedResult.token;));
+      localStorage.setItem('qqlive_key', JSON.stringify({
+        randomKey: decryptedResult.data?.randomKey || decryptedResult.randomKey,
+        randomVector: decryptedResult.data?.randomVector || decryptedResult.randomVector,
+      }));
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -528,32 +530,64 @@ function getLink(liveId, anchorId, liveStatus, type) {
 }
 function getLinkqq(liveId, anchorId, liveStatus, type) {
   const url = "https://gateway.qq-obtain.com/live-client/live/inter/room/220";
-  var token = localStorage.getItem("qqlive");
-  token = token.replace(/"/g, "");
+  // Lấy token + key từ localStorage (hoặc login nếu chưa có)
+  let token = JSON.parse(localStorage.getItem('qqlive_token') || 'null');
+  let keys = JSON.parse(localStorage.getItem('qqlive_key') || '{}');
+  let uid = localStorage.getItem('qqlive_uid') || '3024272496';
+
+  if (!token) {
+    token = await loginqq();
+    keys = JSON.parse(localStorage.getItem('qqlive_key') || '{}');
+    uid = localStorage.getItem('qqlive_uid') || '3024272496';
+  }
+
+  const ts = Date.now().toString();
+  const sign = CryptoJS.MD5(QQ_UDID + 'jgyh,kasd' + ts).toString().toUpperCase();
+  const paySign = CryptoJS.MD5(QQ_UDID.substring(0, 6) + '8qiezi' + ts).toString().toUpperCase();
+
+  const body = encryptLast({
+    appId: 'QQlive',
+    udid: QQ_UDID,
+    timestamp: Number(ts),
+    token: token,
+    sign: sign,
+    channel: '',
+    versionTag: 'Y',
+    language: 'YN',
+    'X-AppVersion': '2.6.0',
+    'P-G': 'N',
+    os: '1',
+    paySign: paySign,
+    anchorId: Number(anchorId),
+    liveId: Number(liveId),
+    uid: Number(uid),
+    adJumpUrl: '',
+    liveStatus: Number(liveStatus || 1),
+    isRoomPreview: 0,
+    type: type || '1',
+  });
 
   fetch(url, {
     method: "POST",
     headers: {
-      Authorization: `HSBox ${token}`,
-      "x-timestamp": 1780077628981,
-      "x-udid": "05991a20be781bc01fd54e34a16021ed",
-      "x-sign": "3F88D94297996BC008A38C3D3766140A",
-      Referer: "https://qqlive.online/",
-      'User-Agent': 'okhttp/4.9.3',
-      "Content-Type": "application/json",
-      "p-ae": "n",
+      'Content-Type': 'application/json',
+      appId: 'QQlive',
+      'X-UDID': QQ_UDID,
+      'X-Timestamp': ts,
+      'X-Sign': sign,
+      'X-AppVersion': '2.6.0',
+      versionTag: 'Y',
+      'N-L': 'Y',
+      'X-Language': 'YN',
+      'P-G': 'N',
+      'P-AE': '1',
+      'NEW-PK': '1',
+      OS: '1',
+      Authorization: 'HSBox ' + token,
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
     },
-    body: JSON.stringify(
-      encryptLast({
-        anchorId: Number(anchorId),
-        liveId: Number(liveId),
-        uid: 2026328074,
-        adJumpUrl: "",
-        liveStatus: Number(liveStatus),
-        isRoomPreview: 0,
-        type: type,
-      })
-    ),
+    body: JSON.stringify(body),
+    referrerPolicy: 'no-referrer',
   })
     .then((response) => response.json())
     .then((data) => {
