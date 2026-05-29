@@ -135,7 +135,7 @@ function getRandom(a, b) {
 }
 // Sử dụng hàm decryptLast để giải mã dữ liệu
 function decryptL(par) {
-  let data = localStorage.getItem("keyqq");
+  let data = localStorage.getItem("qqlive_key");
 
   let key = JSON.parse(data).randomKey;
   let iv = JSON.parse(data).randomVector;
