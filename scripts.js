@@ -203,9 +203,9 @@ function getlistqq() {
     method: "POST",
     targetUrl: "https://qqlive.online/",
     headers: {
-      "x-timestamp": 1723520610607,
-      "x-udid": "05991a20be781bc01fd54e34a16021ed",
-      "x-sign": "61efc8af4c507a4859784791fa5a697a",
+      "x-timestamp": 1780077628981,
+      "x-udid": "bd60d97b3c6a61ed2066343985a9c8c8",
+      "x-sign": "3F88D94297996BC008A38C3D3766140A'",
       "Content-Type": "application/json",
       Referer: "https://qqlive.online/",
       "User-Agent":
@@ -214,8 +214,8 @@ function getlistqq() {
       "p-ae": "n",
     },
     body: JSON.stringify({
-      abc: "1723524119772aMyJ4QMkJxgtmhvp8vtg/OIrvycNydurD4aElgzdXh0=",
-      qwe: "rxQFoAcPh/tfvPCxvf7brCjrwIPz9isOopVrEv4vo/0=",
+      abc: "1780077628981EeUiWCwG4k61Etvei7wwAH4sccHb6qWfUySFUeUAJtY=",
+      qwe: "3stteyeoSfIUH6pmmbaEr2KW2lDTAwy9JNbtnUs7fHbmBmG0yFcJxKpbTXDxOzx+7+c9haf5+sBA3YnvVgmuL0fPkGk5PcqyNv0Fw15I0/I0+DZ9r8fUNwGs+mdy1+DZBCGLy+BXwF+Ua74rwjILHYX457PF4t3l12zGHmabm30XtbZnqsB83sg7eup2critE7apTsMqObLsPJpc56zPvX6Jt4oCMRx61HyfLcpm44qcDL66kKGM/Jr373xN+dRE/j/xBbiFWsBpPmZU4orwTsqEhC4H6Wel7UtDWSCUXGD6pWXGv4ORCxr6yka7Ln9xnJRweLKXEHiP6W6HrPvICDP9cCHPskSDZgK3FfiOXw6dX7la5BKiPi7QvWlvKqNRJEKxufFdRWGKnF3px3Za16uptAWU8yRcOt2cw8KWrI9eUlPutIdwteVUDaasS7U6tRs+u80VFd4hUqHDr9LtGg8V99e58eT7TfEPKzoUrJS70WvxOxl5qU/cjTrZGYecJcy0PVsSmblUDl4K4j0geF9YkdoJkGbc4nxS+9LOFYsp/90n26hAKKV8hQXj7GmP7Z05169xANyjzviR/bSn9A=='",
     }),
     referrerPolicy: "no-referrer",
   })
@@ -385,15 +385,15 @@ function login() {
 }
 function loginqq() {
   const url =
-    "https://gateway.qq-obtain.com/center-client/sys/auth/new/phone/login";
+    "https://gateway.qq-obtain.com/center-client/sys/auth/new/email/login";
 
   fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-timestamp": 1723520610607,
-      "x-udid": "05991a20be781bc01fd54e34a16021ed",
-      "x-sign": "61efc8af4c507a4859784791fa5a697a",
+      "x-timestamp": 1780077628981,
+      "x-udid": "bd60d97b3c6a61ed2066343985a9c8c8'",
+      "x-sign": "3F88D94297996BC008A38C3D3766140A",
       "Content-Type": "application/json",
       Referer: "https://qqlive.online/",
       "User-Agent":
@@ -402,8 +402,8 @@ function loginqq() {
       "p-ae": "n",
     },
     body: JSON.stringify({
-      abc: "1723530093990hgwged2d+ug4nNvGnUmtDGbtIiiLYgsMyGpKzOoVHa0=",
-      qwe: "aXVfFytvpvi8LfbsGsnuZbYPj1vTetRJO8rpT65bJDheKN5QfMvyybhwVljZtYUPlrfTZJO4DXwRBPoLxL2yJLctYzLSORPsi3YMnFwFQrjsqchAVUuVlMNWZioun9GRsyJPUgy/rFCH4KnGuikY5VexlluxC3+DkntGG1zlkUoeNUpKBcFAHOcnE/qo49UIKUGyFTZEf+XxNd5Fbk15AhrwCh+a/NqUftLzwOGQfL5Dn2w4kOXcIMV3LKyX3kDRrt9bxbjPLPOEHuXzB+FAxLLzFCAF6ZL3ayjuLXQyjLY=",
+      abc: "1780077628981EeUiWCwG4k61Etvei7wwAH4sccHb6qWfUySFUeUAJtY=",
+      qwe: "3stteyeoSfIUH6pmmbaEr2KW2lDTAwy9JNbtnUs7fHbmBmG0yFcJxKpbTXDxOzx+7+c9haf5+sBA3YnvVgmuL0fPkGk5PcqyNv0Fw15I0/I0+DZ9r8fUNwGs+mdy1+DZBCGLy+BXwF+Ua74rwjILHYX457PF4t3l12zGHmabm30XtbZnqsB83sg7eup2critE7apTsMqObLsPJpc56zPvX6Jt4oCMRx61HyfLcpm44qcDL66kKGM/Jr373xN+dRE/j/xBbiFWsBpPmZU4orwTsqEhC4H6Wel7UtDWSCUXGD6pWXGv4ORCxr6yka7Ln9xnJRweLKXEHiP6W6HrPvICDP9cCHPskSDZgK3FfiOXw6dX7la5BKiPi7QvWlvKqNRJEKxufFdRWGKnF3px3Za16uptAWU8yRcOt2cw8KWrI9eUlPutIdwteVUDaasS7U6tRs+u80VFd4hUqHDr9LtGg8V99e58eT7TfEPKzoUrJS70WvxOxl5qU/cjTrZGYecJcy0PVsSmblUDl4K4j0geF9YkdoJkGbc4nxS+9LOFYsp/90n26hAKKV8hQXj7GmP7Z05169xANyjzviR/bSn9A==",
     }), // Chuyển dữ liệu thành chuỗi JSON
   })
     .then((response) => response.json())
