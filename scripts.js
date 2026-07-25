@@ -235,8 +235,7 @@ function getlistqq() {
     });
 }
 function getlistyy() {
-  const url = "https://api.fnccdn.com/511/api/plr/zbliv/h5/v5/public/live/lives?pageNum=1&pageSize=200&labelId=1";
-    //"https://api.fnccdn.com/511/api/live-service/h5/v5/public/live/lives?pageNum=1&pageSize=200&labelId=1";
+  const url = "https://sw.fnccdn.com/511/api/plr/scrolliv/live/app/liveCenter/lives?pageNum=1&pageSize=200&labelId=1";
 
   fetch(url, {
     method: "POST",
@@ -273,7 +272,7 @@ function getlistyy() {
 }
 function getlist789() {
   const url =
-    "https://api.fnccdn.com/560/api/plr/zbliv/h5/v5/public/live/lives?pageNum=1&pageSize=200&labelId=1";
+    "https://sw.fnccdn.com/560/api/plr/scrolliv/live/app/liveCenter/lives?pageNum=1&pageSize=200&labelId=1";
 
   fetch(url, {
     method: "POST",
@@ -311,7 +310,7 @@ function getlist789() {
 
 function getlisthot51() {
   const url =
-    "https://api.fnccdn.com/501/api/plr/zbliv/h5/v5/public/live/lives?pageNum=1&pageSize=200&labelId=1";
+    "https://sw.fnccdn.com/560/api/plr/scrolliv/live/app/liveCenter/lives?pageNum=1&pageSize=200&labelId=1";
 
   fetch(url, {
     method: "POST",
@@ -647,7 +646,7 @@ function getLinkqq(liveId, anchorId, liveStatus, type) {
 // }
 
 function getLinkyy(liveId, anchorId, liveStatus, type) {
-  const url = "https://api.fnccdn.com/511/api/plr/zbliv/h5/v3/public/live/room-info";
+  const url = "https://sw.fnccdn.com/506/api/plr/zbliv/h5/v3/public/live/room-info";
 
   fetch(url, {
     method: "POST",
@@ -679,7 +678,7 @@ function getLinkyy(liveId, anchorId, liveStatus, type) {
     });
 }
 function getLink789(liveId, anchorId, liveStatus, type) {
-  const url = "https://api.fnccdn.com/560/api/plr/zbliv/h5/v3/public/live/room-info";
+  const url = "https://sw.fnccdn.com/560/api/plr/zbliv/h5/v3/public/live/room-info";
 
   fetch(url, {
     method: "POST",
@@ -711,7 +710,7 @@ function getLink789(liveId, anchorId, liveStatus, type) {
     });
 }
 function getLinkHot51(liveId, anchorId, liveStatus, type) {
-  const url = "https://api.fnccdn.com/501/api/plr/zbliv/h5/v3/public/live/room-info";
+  const url = "https://sw.fnccdn.com/501/api/plr/zbliv/h5/v3/public/live/room-info";
 
   fetch(url, {
     method: "POST",
