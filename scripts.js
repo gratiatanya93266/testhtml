@@ -272,7 +272,7 @@ function getlistyy() {
 }
 function getlist789() {
   const url =
-    "https://sw.fnccdn.com/560/api/plr/scrolliv/live/app/liveCenter/list.json?pageNum=1&pageSize=200&labelId=1&memArea=VN&merchantId=511&lang=VIT&t=1784964420";
+    "https://sw.fnccdn.com/560/api/plr/scrolliv/live/app/liveCenter/list.json?pageNum=1&pageSize=200&labelId=1&memArea=VN&merchantId=560&lang=VIT&t=1784964420";
 
   fetch(url, {
     method: "POST",
@@ -310,7 +310,7 @@ function getlist789() {
 
 function getlisthot51() {
   const url =
-    "https://sw.fnccdn.com/501/api/plr/scrolliv/live/app/liveCenter/list.json?pageNum=1&pageSize=200&labelId=1&memArea=VN&merchantId=511&lang=VIT&t=1784964420";
+    "https://sw.fnccdn.com/501/api/plr/scrolliv/live/app/liveCenter/list.json?pageNum=1&pageSize=200&labelId=1&memArea=VN&merchantId=501&lang=VIT&t=1784964420";
   fetch(url, {
     method: "POST",
     headers: {
