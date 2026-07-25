@@ -365,12 +365,12 @@ function login() {
       os: 0,
       sign: "21c6066ff81e18305b5186108248e312",
       timestamp: 1722330828163,
-      udid: "4f20d7258366d7c7d1090af96474e260",
+      udid: "a1b2c3d4e5f6a7b8",
       model: "IOS",
-      password: "namnam123",
+      password: "ab123465",
       version: "1.0.2",
       softVersion: "1.0.0",
-      mobile: "0708893821",
+      mobile: "0983439390",
     }), // Chuyển dữ liệu thành chuỗi JSON
   })
     .then((response) => response.json())
