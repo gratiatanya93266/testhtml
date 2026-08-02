@@ -236,7 +236,6 @@ function getlistqq() {
 }
 function getlistyy() {
   const url = "https://sw.fnccdn.com/511/api/plr/scrolliv/live/app/liveCenter/list.json?pageNum=1&pageSize=200&labelId=1&memArea=VN&merchantId=511&lang=VIT&t=1784964420";
-
   fetch(url, {
     method: "POST",
     headers: {
@@ -248,7 +247,7 @@ function getlistyy() {
       "dev-type": "H5",
       area: "VN",
       "Content-Type": "application/json",
-      Referer: "https://ten-trang-web-cua-ban.com",
+      Referer: "https://899.win/",
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     },
@@ -285,7 +284,7 @@ function getlist789() {
       "dev-type": "H5",
       area: "VN",
       "Content-Type": "application/json",
-      Referer: "https://ten-trang-web-cua-ban.com",
+      Referer: "https://899.win/",
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     },
@@ -322,7 +321,7 @@ function getlisthot51() {
       "dev-type": "H5",
       area: "VN",
       "Content-Type": "application/json",
-      Referer: "https://ten-trang-web-cua-ban.com",
+      Referer: "https://899.win/",
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     },
