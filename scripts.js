@@ -250,12 +250,7 @@ function getlistyy() {
       Referer: "https://899.win/",
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    },
-    body: JSON.stringify({
-      pageNum: 1,
-      pageSize: 100,
-      labelId: 1,
-    }),
+    }
   })
     .then((response) => response.json())
     .then((data) => {
@@ -287,12 +282,7 @@ function getlist789() {
       Referer: "https://899.win/",
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    },
-    body: JSON.stringify({
-      pageNum: 1,
-      pageSize: 100,
-      labelId: 1,
-    }), // Chuyển dữ liệu thành chuỗi JSON
+    }// Chuyển dữ liệu thành chuỗi JSON
   })
     .then((response) => response.json())
     .then((data) => {
@@ -314,8 +304,6 @@ function getlisthot51() {
     method: "POST",
     headers: {
       Authorization: `Basic d2ViLXBsYXllcjp3ZWJQbGF5ZXIyMDIyKjk2My4hQCM=`,
-      "x-frame-options": "DENY",
-      "x-content-type-option": "nosniff",
       "locale-language": "VIT",
       merchantid: "501",
       "dev-type": "H5",
@@ -324,12 +312,7 @@ function getlisthot51() {
       Referer: "https://899.win/",
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    },
-    body: JSON.stringify({
-      pageNum: 1,
-      pageSize: 100,
-      labelId: 1,
-    }), // Chuyển dữ liệu thành chuỗi JSON
+    }
   })
     .then((response) => response.json())
     .then((data) => {
