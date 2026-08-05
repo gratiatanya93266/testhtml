@@ -175,7 +175,7 @@ function getlist() {
     "https://gateway.mm-obtain.com/live-client/live/new/4231/1529/list";
 
   fetch(url, {
-    method: "POST",
+    method: "GET",
     headers: {
       "x-timestamp": 1722326222690,
       "x-udid": "4f20d7258366d7c7d1090af96474e260",
@@ -207,7 +207,7 @@ function getlistqq() {
   const body = encryptLast({ uid: 0, type: 1 });
 
   fetch(url, {
-    method: "POST",
+    method: "GET",
     headers: {
        'Content-Type': 'application/json',
         'x-timestamp': ts,
@@ -237,7 +237,7 @@ function getlistqq() {
 function getlistyy() {
   const url = "https://sw.fnccdn.com/511/api/plr/scrolliv/live/app/liveCenter/list.json?pageNum=1&pageSize=200&labelId=1&memArea=VN&merchantId=511&lang=VIT&t=1784964420";
   fetch(url, {
-    method: "POST",
+    method: "GET",
     headers: {
       Authorization: `Basic d2ViLXBsYXllcjp3ZWJQbGF5ZXIyMDIyKjk2My4hQCM=`,
       "x-frame-options": "DENY",
